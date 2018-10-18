@@ -1,6 +1,6 @@
 package utils_thread;
 
-import utils.PairUtils;
+import utils.Pair;
 import java.util.List;
 
 /**
@@ -8,12 +8,12 @@ import java.util.List;
  */
 
 public class MultiplicationThread extends Thread {
-    private List<PairUtils> pairs;
+    private List<Pair> pairs;
     private int[][] firstMatrix;
     private int[][] secondMatrix;
     private int[][] multMatrix;
 
-    public MultiplicationThread(List<PairUtils> pairs, int[][] firstMatrix, int[][] secondMatrix, int[][] multMatrix) {
+    public MultiplicationThread(List<Pair> pairs, int[][] firstMatrix, int[][] secondMatrix, int[][] multMatrix) {
         this.pairs = pairs;
         this.firstMatrix = firstMatrix;
         this.secondMatrix = secondMatrix;
@@ -24,7 +24,7 @@ public class MultiplicationThread extends Thread {
 
     @Override
     public void run() {
-        for (PairUtils p : pairs) {
+        for (Pair p : pairs) {
             int row = p.getRow();
             int column = p.getColumn();
             multMatrix[row][column] = calculateMultiplicationElement(row, column);

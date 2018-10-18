@@ -4,11 +4,11 @@ package utils;
  * Created by Beni on 10/15/2017.
  */
 
-public class PairUtils {
+public class Pair {
     private int row;
     private int column;
 
-    public PairUtils(int row, int column) {
+    public Pair(int row, int column) {
         this.row = row;
         this.column = column;
     }
